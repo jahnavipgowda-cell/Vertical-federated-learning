@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    background-color: #0B1220;
+  }
+  body {
+    @apply bg-ink text-textPrimary font-body antialiased;
+  }
+  ::selection {
+    background: #3FD9C7;
+    color: #0B1220;
+  }
+  * {
+    scrollbar-color: #24314D #0B1220;
+    scrollbar-width: thin;
+  }
+  ::-webkit-scrollbar { width: 8px; height: 8px; }
+  ::-webkit-scrollbar-track { background: #0B1220; }
+  ::-webkit-scrollbar-thumb { background: #24314D; border-radius: 4px; }
+}
+
+@layer components {
+  .panel {
+    @apply bg-panel border border-line rounded-xl;
+  }
+  .btn-primary {
+    @apply bg-signal text-ink font-semibold px-4 py-2 rounded-lg hover:brightness-110 active:brightness-95 transition disabled:opacity-40 disabled:cursor-not-allowed;
+  }
+  .btn-secondary {
+    @apply bg-panelAlt text-textPrimary border border-line font-medium px-4 py-2 rounded-lg hover:border-signal/60 transition disabled:opacity-40 disabled:cursor-not-allowed;
+  }
+  .label-eyebrow {
+    @apply font-mono text-xs uppercase tracking-widest text-signal;
+  }
+  .field-label {
+    @apply text-sm text-textMuted font-medium mb-1.5 block;
+  }
+}
